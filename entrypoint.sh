@@ -17,7 +17,7 @@ do
 		exit 1
 	fi
 	echo "--- Testing tcp connectivity to host $host, port $port"
-	echo | ncat --wait 5 --send-only $host $port
+	echo | ncat -v --wait 5 --send-only $host $port
 	result=$?
 	#echo "result was $result"
 	if [ $result -ne 0 ]; then
