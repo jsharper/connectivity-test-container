@@ -16,6 +16,8 @@ do
 		echo "Invalid syntax on parameter [$var]"
 		exit 1
 	fi
+	echo "--- nslookup $host"
+	nslookup $host
 	echo "--- Testing tcp connectivity to host $host, port $port"
 	echo | ncat -v --wait 5 --send-only $host $port
 	result=$?
